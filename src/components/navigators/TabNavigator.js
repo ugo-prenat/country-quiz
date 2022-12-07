@@ -1,8 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
-import Favourites from '../screens/Favourites';
 import QuizScreen from '../screens/quizScreen/QuizScreen';
+import Favourites from '../screens/Favourites';
+import List from '../screens/List';
+import { Icon } from '@rneui/themed';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,9 +15,30 @@ const TabNavigator = () => {
         headerShown: false
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="quiz" component={QuizScreen} />
-      <Tab.Screen name="favourites" component={Favourites} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{ tabBarIcon: () => <Icon name="home" color="#000" /> }}
+      />
+      <Tab.Screen
+        name="Quiz"
+        component={QuizScreen}
+        options={{
+          tabBarIcon: () => (
+            <Icon type="font-awesome" name="question" color="#000" />
+          )
+        }}
+      />
+      <Tab.Screen
+        name="Favourites"
+        component={Favourites}
+        options={{
+          tabBarIcon: () => (
+            <Icon type="font-awesome" name="heart" color="#000" />
+          )
+        }}
+      />
+      <Tab.Screen name="list" component={List} />
     </Tab.Navigator>
   );
 };
