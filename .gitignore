@@ -64,7 +64,7 @@ buck-out
 .gradle
 local.properties
 *.iml
-/android/*
+#/android/*
 !/android/README.md
 
 # Node
@@ -111,6 +111,8 @@ package-lock.json
 /template/ios/Pods/
 /template/ios/Podfile.lock
 /packages/rn-tester/Gemfile.lock
+ios/Pods
+
 
 # Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
 /packages/rn-tester/Pods/*
@@ -139,5 +141,3 @@ package-lock.json
 
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
-
-ios/Pods
