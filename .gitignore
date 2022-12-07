@@ -59,7 +59,7 @@ buck-out
 # Watchman
 .watchmanconfig
 
-# Android
+/android/app/build
 .idea
 .gradle
 local.properties
