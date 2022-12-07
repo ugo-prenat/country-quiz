@@ -10,7 +10,7 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
       }}
     >
       <Tab.Screen name="Home" component={Home} />
