@@ -5,13 +5,25 @@ const blue = '#006CEA';
 export const styles = StyleSheet.create({
   pageContainer: {
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'center'
+  },
+  quizQuestionContainer: {
+    justifyContent: 'flex-start'
+  },
+  questionWrapper: {
+    marginTop: 50
   },
   button: {
     color: 'white',
     backgroundColor: blue,
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 5
+  },
+  questionNb: {
+    textAlign: 'center'
+  },
+  buttonText: {
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 15
   },
@@ -26,7 +38,8 @@ export const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   question: {
-    fontSize: 20
+    fontSize: 20,
+    marginBottom: 20
   },
   propositionBtn: {
     marginVertical: 10,
@@ -34,6 +47,21 @@ export const styles = StyleSheet.create({
   },
   propositionBtnText: {
     color: 'white'
+  },
+  correctAnswer: {
+    backgroundColor: 'green'
+  },
+  wrongAnswer: {
+    backgroundColor: 'red'
+  },
+  hidedBottom: {
+    position: 'absolute',
+    bottom: 30,
+    left: 0
+  },
+  hidedBottomBtn: {
+    justifyContent: 'center',
+    flexDirection: 'row'
   },
   didYouKnowContainer: {
     marginTop: 20,
@@ -45,6 +73,21 @@ export const styles = StyleSheet.create({
     marginBottom: 5
   },
   didYouKnowAnecdote: {
-    textAlign: 'center'
+    textAlign: 'center',
+    marginBottom: 10
+  },
+  resultBtns: {
+    flexDirection: 'row',
+    marginTop: 30
+  },
+  replayBtn: {
+    marginRight: 10,
+    backgroundColor: 'white',
+    borderColor: blue,
+    borderWidth: 1
+  },
+  replayBtnText: {
+    color: blue,
+    fontWeight: 'normal'
   }
 });

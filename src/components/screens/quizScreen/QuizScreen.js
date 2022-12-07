@@ -9,8 +9,11 @@ const QuizScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={[genStyles.safeArea, styles.pageContainer]}>
-      <Pressable onPress={() => navigation.push('quizQuestion', { questions })}>
-        <Text style={styles.button}>Commencer le quiz</Text>
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.push('quizQuestion', { questions })}
+      >
+        <Text style={styles.buttonText}>Commencer le quiz</Text>
       </Pressable>
     </SafeAreaView>
   );

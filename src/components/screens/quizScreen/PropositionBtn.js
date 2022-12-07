@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Pressable, Text } from 'react-native';
 import { styles } from '../../../styles/quiz';
 
-const PropositionBtn = ({ proposition, answer, handleAnswer }) => {
+const PropositionBtn = ({ proposition, answer, handleAnswer, showAnswer }) => {
   return (
     <Pressable
-      style={[styles.button, styles.propositionBtn]}
+      style={[
+        styles.button,
+        styles.propositionBtn,
+        {
+          backgroundColor: showAnswer
+            ? proposition === answer
+              ? 'green'
+              : 'red'
+            : '#006CEA'
+        }
+      ]}
       onPress={() => handleAnswer(proposition === answer)}
     >
       <Text style={styles.propositionBtnText}>{proposition}</Text>
