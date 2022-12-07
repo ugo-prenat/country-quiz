@@ -1,5 +1,4 @@
 import React from "react";
-import { Icon } from "@rneui/themed";
 import { SafeAreaView, View, Text, Pressable } from "react-native";
 import { styles } from "../../styles/styles";
 
@@ -11,7 +10,6 @@ const Home = ({ navigation }) => {
         <Pressable onPress={() => navigation.push("register")}>
           <Text>go to register</Text>
         </Pressable>
-        <Icon name="account-box" color="#000" />
       </View>
     </SafeAreaView>
   );
