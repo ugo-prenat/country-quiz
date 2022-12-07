@@ -1,0 +1,60 @@
+[
+  {
+    "id": 0,
+    "countryFlag": "https://www.countryflags.com/wp-content/uploads/france-flag-png-large.png",
+    "question": "Quelle est la capitale de la France ?",
+    "reponse": "Paris",
+    "propositions": ["Paris", "Lyon", "Marseille", "Toulouse"],
+    "anecdote": "Le village de Saint-Véran (département des Hautes-Alpes) est la commune la plus haute d'Europe. Le village lui-même est situé à 2.042 mètres d'altitude, et le point culminant de son territoire atteint 3.175 mètres."
+  },
+  {
+    "id": 1,
+    "countryFlag": "https://www.countryflags.com/wp-content/uploads/germany-flag-png-large.png",
+    "question": "Quelle est la capitale de l'Allemagne ?",
+    "reponse": "Berlin",
+    "propositions": ["Berlin", "Hambourg", "Munich", "Cologne"],
+    "anecdote": "Il y a environ 2,5 millions de maisons à colombage en Allemagne, de loin le plus grand nombre de n'importe quel pays dans le monde."
+  },
+  {
+    "id": 2,
+    "countryFlag": "https://www.countryflags.com/wp-content/uploads/senegal-flag-png-large.png",
+    "question": "Quelle est la population du Sénégal ?",
+    "reponse": "17 200 000",
+    "propositions": ["17 200 000", "12 480 000", "1 030 000", "24 100 000"],
+    "anecdote": "Le Sénégal est l’une des démocraties les plus stables en Afrique : elle a connu plusieurs transitions de pouvoirs sans aucun heurts entre partis rivaux, depuis les années 2000 !"
+  },
+  {
+    "id": 3,
+    "countryFlag": "https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png",
+    "question": "Quelle est la population des États-Unis ?",
+    "reponse": "331 900 000",
+    "propositions": ["331 900 000", "120 480 000", "10 030 000", "240 100 000"],
+    "anecdote": "Le Kansas a la particularité d’être considéré comme le centre géographique des États-Unis, à mi-chemin entre l’Atlantique et le Pacifique."
+  },
+  {
+    "id": 4,
+    "countryFlag": "https://www.countryflags.com/wp-content/uploads/france-flag-png-large.png",
+    "question": "Quelle est la superficie de la France ?",
+    "reponse": "643 801 km²",
+    "propositions": [
+      "643 801 km²",
+      "800 480 km²",
+      "100 030 km²",
+      "340 100 km²"
+    ],
+    "anecdote": "Presque 20 % du territoire français se situe en dehors de l'Europe. 2,5 millions de citoyens français vivent dans ces départements et territoires d'outre-mer."
+  },
+  {
+    "id": 5,
+    "countryFlag": "https://www.countryflags.com/wp-content/uploads/germany-flag-png-large.png",
+    "question": "Quelle est la superficie de l'Allemagne ?",
+    "reponse": "357 588 km²",
+    "propositions": [
+      "357 588 km²",
+      "800 480 km²",
+      "100 030 km²",
+      "340 100 km²"
+    ],
+    "anecdote": "L'Allemagne est le pays européen le plus peuplé (en dehors de la Russie), avec une population de 82 millions."
+  }
+]
