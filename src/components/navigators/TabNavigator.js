@@ -2,8 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Favourites from '../screens/Favourites';
-import Login from '../screens/Login';
-import Register from '../screens/Register';
 import Quiz from '../screens/Quiz';
 
 const Tab = createBottomTabNavigator();
@@ -15,9 +13,9 @@ const TabNavigator = () => {
         headerShown: false
       }}
     >
-      <Tab.Screen name="Accueil" component={Home} />
-      <Tab.Screen name="Quiz" component={Quiz} />
-      <Tab.Screen name="Favoris" component={Favourites} />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="quiz" component={Quiz} />
+      <Tab.Screen name="favourites" component={Favourites} />
     </Tab.Navigator>
   );
 };
