@@ -60,12 +60,14 @@ buck-out
 .watchmanconfig
 
 # Android
+/android/app
 .idea
 .gradle
 local.properties
 *.iml
 #/android/*
 !/android/README.md
+
 
 # Node
 node_modules
@@ -141,3 +143,4 @@ ios/Pods
 
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
+yarn.lock
