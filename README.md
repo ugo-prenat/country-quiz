@@ -24,6 +24,7 @@ So we made this app to help student to be better in geography by playing.
 ## Where to find help ?
 
 Official react-native doc : https://reactnative.dev/
+
 Contact me : brian.hovancam-richard@edu.itescia.fr
 
 ## Who are the contributors ?
