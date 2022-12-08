@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-country_quizz-country_quizzTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-country_quizz-country_quizzTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EF876A64544449CCB5FEDCA6 /* MuktaMahee-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1045F0838C974166A9E295BA /* MuktaMahee-Bold.ttf */; };
+		7C07D72F97BA4D94849EE877 /* MuktaMahee-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C275B8C7CCC45DCB5DDAFEA /* MuktaMahee-ExtraBold.ttf */; };
+		60C6A0083A074DBD9EA14E82 /* MuktaMahee-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 606C14CBC9794D1B9B717781 /* MuktaMahee-ExtraLight.ttf */; };
+		E011021DA77C46829B1A8EDA /* MuktaMahee-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00FC10628EA3434BA26DEBC8 /* MuktaMahee-Light.ttf */; };
+		EF1CD6E983A54641B1FBE3FF /* MuktaMahee-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6C1FFD68E340ECB1FBFDC7 /* MuktaMahee-Medium.ttf */; };
+		F6A673C8FDDE4ADE9E9A4548 /* MuktaMahee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01277841AB14ADDABB64810 /* MuktaMahee-Regular.ttf */; };
+		F583C913A93C47D8B4931417 /* MuktaMahee-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8BB8A16F9DD4EFEBCE7C52D /* MuktaMahee-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = country_quizz/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-country_quizz-country_quizzTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-country_quizz-country_quizzTests.release.xcconfig"; path = "Target Support Files/Pods-country_quizz-country_quizzTests/Pods-country_quizz-country_quizzTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		1045F0838C974166A9E295BA /* MuktaMahee-Bold.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-Bold.ttf"; path = "../src/components/assets/fonts/MuktaMahee-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C275B8C7CCC45DCB5DDAFEA /* MuktaMahee-ExtraBold.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-ExtraBold.ttf"; path = "../src/components/assets/fonts/MuktaMahee-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		606C14CBC9794D1B9B717781 /* MuktaMahee-ExtraLight.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-ExtraLight.ttf"; path = "../src/components/assets/fonts/MuktaMahee-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		00FC10628EA3434BA26DEBC8 /* MuktaMahee-Light.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-Light.ttf"; path = "../src/components/assets/fonts/MuktaMahee-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7B6C1FFD68E340ECB1FBFDC7 /* MuktaMahee-Medium.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-Medium.ttf"; path = "../src/components/assets/fonts/MuktaMahee-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B01277841AB14ADDABB64810 /* MuktaMahee-Regular.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-Regular.ttf"; path = "../src/components/assets/fonts/MuktaMahee-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F8BB8A16F9DD4EFEBCE7C52D /* MuktaMahee-SemiBold.ttf */ = {isa = PBXFileReference; name = "MuktaMahee-SemiBold.ttf"; path = "../src/components/assets/fonts/MuktaMahee-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				C5FF3FB61FE0481FB11F72B5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +162,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		C5FF3FB61FE0481FB11F72B5 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				1045F0838C974166A9E295BA /* MuktaMahee-Bold.ttf */,
+				0C275B8C7CCC45DCB5DDAFEA /* MuktaMahee-ExtraBold.ttf */,
+				606C14CBC9794D1B9B717781 /* MuktaMahee-ExtraLight.ttf */,
+				00FC10628EA3434BA26DEBC8 /* MuktaMahee-Light.ttf */,
+				7B6C1FFD68E340ECB1FBFDC7 /* MuktaMahee-Medium.ttf */,
+				B01277841AB14ADDABB64810 /* MuktaMahee-Regular.ttf */,
+				F8BB8A16F9DD4EFEBCE7C52D /* MuktaMahee-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +274,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EF876A64544449CCB5FEDCA6 /* MuktaMahee-Bold.ttf in Resources */,
+				7C07D72F97BA4D94849EE877 /* MuktaMahee-ExtraBold.ttf in Resources */,
+				60C6A0083A074DBD9EA14E82 /* MuktaMahee-ExtraLight.ttf in Resources */,
+				E011021DA77C46829B1A8EDA /* MuktaMahee-Light.ttf in Resources */,
+				EF1CD6E983A54641B1FBE3FF /* MuktaMahee-Medium.ttf in Resources */,
+				F6A673C8FDDE4ADE9E9A4548 /* MuktaMahee-Regular.ttf in Resources */,
+				F583C913A93C47D8B4931417 /* MuktaMahee-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
