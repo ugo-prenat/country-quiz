@@ -2,6 +2,7 @@ import { Icon } from '@rneui/themed';
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   Image,
+  Pressable,
   SafeAreaView,
   Text,
   TouchableOpacity,
@@ -10,12 +11,18 @@ import {
 import { styles } from '../../styles/infoCountry';
 import { getDistance } from 'geolib';
 import GetLocation from 'react-native-get-location';
+import {
+  addFavourite,
+  isFavourite,
+  removeFavourite
+} from '../asyncStorageHelper';
 
 const Info = ({ route, navigation }) => {
   const { countryName } = route.params;
   const [data, setData] = useState({});
   const [distance, setDistance] = useState(0);
   const [hasLoad, setHasLoad] = useState(false);
+  const [isCountryFavourite, setIsCountryFavourite] = useState();
 
   const loadData = useCallback(async () => {
     const res = await fetch(
@@ -23,10 +30,12 @@ const Info = ({ route, navigation }) => {
     );
     const json = await res.json();
 
-    if (json instanceof Array) setData(json[0]);
-
-    // Get distance between user and country
-    setDistance(await getDistanceBetweenUserAndCountry(json[0].latlng));
+    if (json instanceof Array) {
+      const country = json[0];
+      setData(country);
+      setDistance(await getDistanceBetweenUserAndCountry(country.latlng));
+      setIsCountryFavourite(await isFavourite(country));
+    }
 
     setHasLoad(json instanceof Array);
   }, [countryName]);
@@ -44,6 +53,16 @@ const Info = ({ route, navigation }) => {
       }
     }
     return str.substring(0, str.length - 2);
+  };
+
+  const handleFavouriteClick = async () => {
+    if (isCountryFavourite) {
+      setIsCountryFavourite(false);
+      await removeFavourite(data.name.common);
+    } else {
+      setIsCountryFavourite(true);
+      await addFavourite(data);
+    }
   };
 
   return (
@@ -103,6 +122,26 @@ const Info = ({ route, navigation }) => {
       <Text style={[styles.distance]}>
         Vous vous situez à {distance} km de ce pays
       </Text>
+      <View style={styles.favBtnContainer}>
+        <Pressable
+          style={[
+            styles.favBtn,
+            !isCountryFavourite ? styles.deleteFavBtn : ''
+          ]}
+          onPress={handleFavouriteClick}
+        >
+          <Text
+            style={[
+              styles.favBtnText,
+              !isCountryFavourite ? styles.deleteFavBtnText : ''
+            ]}
+          >
+            {isCountryFavourite
+              ? 'Supprimer des favoris'
+              : 'Ajouter aux favoris'}
+          </Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 };

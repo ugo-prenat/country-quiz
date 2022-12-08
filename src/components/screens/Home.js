@@ -9,6 +9,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { styles } from '../../styles/styles';
+import { resetFavourites } from '../asyncStorageHelper';
+import CountryCard from '../CountryCard';
 
 const Home = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
@@ -47,29 +49,6 @@ const Home = ({ navigation }) => {
         )}
       </View>
     </SafeAreaView>
-  );
-};
-
-const CountryCard = ({ country, navigation }) => {
-  return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate('infoCountry', {
-          countryName: country.name.common
-        })
-      }
-    >
-      <View style={styles.viewCardAllCountry}>
-        <Image
-          style={styles.imageAllCountryFlags}
-          source={{ uri: country.flags.png }}
-          resizeMode="contain"
-        />
-        <Text style={styles.textAllCountryFlags}>
-          {country.translations.fra.common}
-        </Text>
-      </View>
-    </TouchableOpacity>
   );
 };
 
