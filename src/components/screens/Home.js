@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   View,
@@ -6,9 +6,9 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
-  TouchableOpacity,
-} from "react-native";
-import { styles } from "../../styles/styles";
+  TouchableOpacity
+} from 'react-native';
+import { styles } from '../../styles/styles';
 
 const Home = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const Home = ({ navigation }) => {
 
   const getCountries = async () => {
     try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
+      const response = await fetch('https://restcountries.com/v3.1/all');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -54,8 +54,8 @@ const CountryCard = ({ country, navigation }) => {
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("infoCountry", {
-          countryName: country.name.common,
+        navigation.navigate('infoCountry', {
+          countryName: country.name.common
         })
       }
     >
