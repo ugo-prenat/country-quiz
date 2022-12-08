@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   SafeAreaView,
   View,
   Text,
   ActivityIndicator,
   FlatList,
-  Image
-} from 'react-native';
-import { styles } from '../../styles/styles';
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import { styles } from "../../styles/styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   const getCountries = async () => {
     try {
-      const response = await fetch('https://restcountries.com/v3.1/all');
+      const response = await fetch("https://restcountries.com/v3.1/all");
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -38,7 +39,9 @@ const Home = () => {
           <FlatList
             data={data}
             keyExtractor={({ altSpellings }) => altSpellings}
-            renderItem={({ item }) => <CountryCard country={item} />}
+            renderItem={({ item }) => (
+              <CountryCard country={item} navigation={navigation} />
+            )}
           />
         )}
       </View>
@@ -46,15 +49,25 @@ const Home = () => {
   );
 };
 
-const CountryCard = ({ country }) => {
+const CountryCard = ({ country, navigation }) => {
   return (
-    <View style={styles.viewCardAllCountry}>
-      <Image
-        style={styles.imageAllCountryFlags}
-        source={{ uri: country.flags.png }}
-      />
-      <Text style={styles.textAllCountryFlags}>{country.name.common}</Text>
-    </View>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("infoCountry", {
+          countryName: country.name.common,
+        })
+      }
+    >
+      <View style={styles.viewCardAllCountry}>
+        <Image
+          style={styles.imageAllCountryFlags}
+          source={{ uri: country.flags.png }}
+        />
+        <Text style={styles.textAllCountryFlags}>
+          {country.translations.fra.common}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
