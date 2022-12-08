@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { SafeAreaView, ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
 import { styles } from '../../styles/styles';
 
 
@@ -7,12 +7,11 @@ export default App = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  const getMovies = async () => {
+  const getCountries = async () => {
      try {
-      const response = await fetch('https://restcountries.com/v3.1/name/france');
+      const response = await fetch('https://restcountries.com/v3.1/all');
       const json = await response.json();
       setData(json);
-      console.log(json)
     } catch (error) {
       console.error(error);
     } finally {
@@ -20,21 +19,30 @@ export default App = () => {
     }
   }
 
+
+
   useEffect(() => {
-    getMovies();
+    getCountries();
   }, []);
 
-//   return (
-//     <View style={{ flex: 1, padding: 24 }}>
-//       {isLoading ? <ActivityIndicator/> : (
-//         <FlatList
-//           data={data}
-//           keyExtractor={({ id }, index) => id}
-//           renderItem={({ item }) => (
-//             <Text>{item.title}, {item.releaseYear}</Text>
-//           )}
-//         />
-//       )}
-//     </View>
-//   );
+  return (
+    <View style={{ flex: 1, padding: 24 }}>
+      {isLoading ? <ActivityIndicator/> : (
+        <FlatList
+          data={data}
+          keyExtractor={({ altSpellings }) => altSpellings}
+          renderItem={({ item }) => (
+
+            <>
+            <View style={styles.viewCardAllCountry}>
+            <Image style={styles.imageAllCountryFlags} source={{uri: item.flags.png}} />
+            <Text style={styles.textAllCountryFlags}>{item.name.common}</Text>
+            </View>
+            </>
+          )}
+        />
+      )}
+    </View>
+  );
 };
+
