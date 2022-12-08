@@ -11,8 +11,10 @@ const QuizResultScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={[genStyles.safeArea, styles.pageContainer]}>
-      <Text>{percentWin > 50 ? 'Bravo !' : 'Dommage...'}</Text>
-      <Text>
+      <Text style={styles.quizResultText}>
+        {percentWin > 50 ? 'Bravo !' : 'Dommage...'}
+      </Text>
+      <Text style={styles.quizResultText}>
         Tu as eu {goodAnswers} bonnes réponse
         {goodAnswers > 1 ? 's ' : ' '}
         sur {answers.length}
