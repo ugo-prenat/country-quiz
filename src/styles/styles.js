@@ -1,25 +1,24 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  
   safeArea: {
-    flex: 1,
+    flex: 1
   },
 
-  container : {
-    flex : 1,
-    alignItems : 'center',
+  container: {
+    flex: 1,
+    alignItems: 'center'
   },
 
   background_image: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: 'center'
   },
 
-  logo : {
-    width : 130,
-    height : 130,
-    marginTop : 70,
+  logo: {
+    width: 130,
+    height: 130,
+    marginTop: 70
   },
 
   label : {
@@ -41,35 +40,40 @@ export const styles = StyleSheet.create({
     fontFamily: 'MuktaMahee-Regular'
   },
 
-  errorInputLabel : {
-    color : '#EE0000'
+  inputLabel: {
+    fontSize: 20,
+    color: '#ffff'
   },
 
-  input : {
-    borderColor : '#ffff',
-    borderWidth : 1,
-    backgroundColor : '#ffff',
-    borderRadius : 10,
-    width : 300,
-    height : 40,
-    marginTop : 5,
-    paddingLeft : 10,
-    color : '#000',
+  errorInputLabel: {
+    color: '#EE0000'
   },
 
-  errorInput : {
-    borderColor : '#EE0000',
-    color : '#EE0000',
-    borderWidth : 2,
+  input: {
+    borderColor: '#ffff',
+    borderWidth: 1,
+    backgroundColor: '#ffff',
+    borderRadius: 10,
+    width: 300,
+    height: 40,
+    marginTop: 5,
+    paddingLeft: 10,
+    color: '#000'
   },
 
-  submitButton : {
-    borderColor : '#006CEA',
-    backgroundColor : '#006CEA',
-    color : '#ffff',
-    width : 150,
-    height : 50,
-    justifyContent : 'center',
+  errorInput: {
+    borderColor: '#EE0000',
+    color: '#EE0000',
+    borderWidth: 2
+  },
+
+  submitButton: {
+    borderColor: '#006CEA',
+    backgroundColor: '#006CEA',
+    color: '#ffff',
+    width: 150,
+    height: 50,
+    justifyContent: 'center',
     alignItems: 'center',
     borderRadius : 10,
     marginTop : 20,
@@ -87,9 +91,9 @@ export const styles = StyleSheet.create({
     fontFamily: 'MuktaMahee-Regular'
   },
 
-  connexionBox : {
-    flexDirection : 'row',
-    marginTop : 20,
+  connexionBox: {
+    flexDirection: 'row',
+    marginTop: 20,
     fontFamily: 'MuktaMahee-Regular'
   },
 
@@ -105,5 +109,4 @@ export const styles = StyleSheet.create({
     width : 300,
     fontSize : 20
   }
-
 });
