@@ -31,12 +31,13 @@ const Home = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={{ flex: 1, padding: 24 }}>
+    <SafeAreaView style={styles.safeArea}>
+      <View>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
           <FlatList
+            style={{ padding: 24 }}
             data={data}
             keyExtractor={({ altSpellings }) => altSpellings}
             renderItem={({ item }) => (
@@ -62,6 +63,7 @@ const CountryCard = ({ country, navigation }) => {
         <Image
           style={styles.imageAllCountryFlags}
           source={{ uri: country.flags.png }}
+          resizeMode="contain"
         />
         <Text style={styles.textAllCountryFlags}>
           {country.translations.fra.common}
