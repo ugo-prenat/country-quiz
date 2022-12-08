@@ -76,5 +76,7 @@
 		<string>MuktaMahee-Regular.ttf</string>
 		<string>MuktaMahee-SemiBold.ttf</string>
 	</array>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>This app needs to get your location...</string>
 </dict>
 </plist>
