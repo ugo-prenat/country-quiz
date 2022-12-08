@@ -39,6 +39,10 @@ export const styles = StyleSheet.create({
     color : '#ffff',
   },
 
+  errorInputLabel : {
+    color : '#EE0000'
+  },
+
   input : {
     borderColor : '#ffff',
     borderWidth : 1,
@@ -46,7 +50,15 @@ export const styles = StyleSheet.create({
     borderRadius : 10,
     width : 300,
     height : 40,
-    marginTop : 5
+    marginTop : 5,
+    paddingLeft : 10,
+    color : '#000',
+  },
+
+  errorInput : {
+    borderColor : '#EE0000',
+    color : '#EE0000',
+    borderWidth : 2,
   },
 
   submitButton : {
@@ -58,6 +70,21 @@ export const styles = StyleSheet.create({
     justifyContent : 'center',
     alignItems: 'center',
     borderRadius : 10
+  },
+
+  connexionText : {
+    fontSize : 20,
+    color : '#ffff',
+  },
+
+  connexion : {
+    fontSize : 20,
+    color : '#006CEA',
+  },
+
+  connexionBox : {
+    flexDirection : 'row',
+    marginTop : 20,
   }
 
 });
