@@ -53,7 +53,9 @@ const CountryCard = ({ country }) => {
         style={styles.imageAllCountryFlags}
         source={{ uri: country.flags.png }}
       />
-      <Text style={styles.textAllCountryFlags}>{country.name.common}</Text>
+      <Text style={styles.textAllCountryFlags}>
+        {country.translations.fra.common}
+      </Text>
     </View>
   );
 };
