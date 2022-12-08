@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import QuizScreen from '../screens/quizScreen/QuizScreen';
 import Favourites from '../screens/Favourites';
-import List from '../screens/List';
 import { Icon } from '@rneui/themed';
 
 const Tab = createBottomTabNavigator();
@@ -38,7 +37,6 @@ const TabNavigator = () => {
           )
         }}
       />
-      <Tab.Screen name="list" component={List} />
     </Tab.Navigator>
   );
 };
