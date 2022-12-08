@@ -85,7 +85,6 @@ export const styles = StyleSheet.create({
   connexionBox : {
     flexDirection : 'row',
     marginTop : 20,
-    backgroundColor: '#fff',
     fontFamily: 'MuktaMahee-Regular'
   }
 
