@@ -18,7 +18,7 @@ So we made this app to help student to be better in geography by playing.
 4. Do this command line "npm install" to install all dependencies
 5. Use your phone as device or use the default virtual phone
 6. When it's done, do this command to open metro "npx react-native start"
-7. Open another command line and do this command "npx reacy-native run-android" to run your app
+7. Open another command line and do this command "npx react-native run-android" to run your app
 8. And enjoy
 
 ## Where to find help ?
