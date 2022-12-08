@@ -1,10 +1,10 @@
-# country-quiz
+# Country Quiz
 
-## What is country-quiz ?
+## What is Country Quiz ?
 
-country-quiz is an mobile app about countries. On this app you can train your geography playing the quiz and learning on the countries list.
+Country Quiz is an mobile app about countries. On this app you can train your geography playing the quiz and learning on the countries list.
 
-## Why country-quiz ?
+## Why Country Quiz ?
 
 In 1980 the average graduation score of geography was 15 while the average score is now 12.
 We conclued that The level rose down.
