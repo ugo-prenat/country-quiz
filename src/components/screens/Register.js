@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import { Pressable, SafeAreaView, Text, ImageBackground, View, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import { Text, ImageBackground, View, Image, TextInput, TouchableOpacity, Alert, ScrollView, Modal } from 'react-native';
 import { styles } from '../../styles/styles';
 
 
@@ -7,17 +7,22 @@ const Register = ({ navigation }) => {
 
   const [email, setEmail] = useState('');
   const [isEmailValidate, setIsEmailValidate] = useState(true);
+  const [errorEmailMsg, setErrorEmailMsg] = useState('');
 
   const [username, setUsername] = useState('');
   const [isUsernameValidate, setIsUsernameValidate] = useState(true);
+  const [errorUsernameMsg, setErrorUsernameMsg] = useState('');
 
   const [password, setPassword] = useState('');
   const [isPwdValidate, setIsPwdValidate] = useState(true);
+  const [errorPwdMsg, setErrorPwdMsg] = useState('');
+
+  const [errorForm, setErrorForm] = useState('');
 
   const checkEmailFormat = useCallback(() => {
     const  regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
     if(!regExpEmail.test(email)) {
-        Alert.alert('Email invalide');
+      setErrorEmailMsg('Votre email est invalide');
     }
   }, [email, setEmail])
 
@@ -27,23 +32,25 @@ const Register = ({ navigation }) => {
   }, [email, setIsEmailValidate])
 
   const validateUsername = useCallback(() => {
-    setIsUsernameValidate(username.length > 3);
+    if(username.length < 3) {
+      setErrorUsernameMsg('Votre pseudo doit contenir au moins 5 caractères.');
+    }
   }, [username, setIsUsernameValidate])
 
   const checkPwdFormat = useCallback(() => {
     let regExpPwd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if(!regExpPwd.test(password)) {
-      Alert.alert('Mot de passe invalide');
+      setErrorPwdMsg('Votre mot de passe doit contenir 8 caractères dont 1 lettre, 1 nombre et un caractère spécial.')
     }
   }, [password, setPassword])
 
   const onSubmit = useCallback(() => {
     if (!email || !username || !password || !isEmailValidate || !isUsernameValidate || !isPwdValidate) {
-        Alert.alert('Votre inscription est incomplète.');
+      setErrorForm('Veuillez renseigner tous les champs.')
         return;
     }
 
-    Alert.alert('Bienvenue ' + username + '.\n' + 'Votre inscription a \n bien été prise en compte !');
+    Alert.alert('Merci de votre inscription ' + username + '!\n' + 'Bienvenue sur Country Quiz !');
   }, [email, username, password, isEmailValidate, isUsernameValidate, isPwdValidate])
 
   return (
@@ -53,6 +60,8 @@ const Register = ({ navigation }) => {
           <View style={styles.container}>
               <Image source={require('../../assets/logo_app.png')} style={styles.logo}></Image>
               <Text style={styles.label}>Inscription</Text>
+
+              <Text style={styles.errorMsgGlobal}>{ errorForm }</Text>
               
               <View style={styles.inputBox}>
                 <Text style={[styles.inputLabel, !isEmailValidate && styles.errorInputLabel]}>Email</Text>
@@ -62,8 +71,8 @@ const Register = ({ navigation }) => {
                           onChangeText={setEmail} 
                           onEndEditing={validateEmail}>
                 </TextInput>
-              </View>
-              
+                <Text style={styles.errorMsg}>{ errorEmailMsg }</Text>
+              </View> 
               <View style={styles.inputBox}>
                 <Text style={[styles.inputLabel, !isUsernameValidate && styles.errorInputLabel]}>Nom d'utilisateur</Text>
                 <TextInput 
@@ -72,6 +81,7 @@ const Register = ({ navigation }) => {
                           onChangeText={setUsername} 
                           onEndEditing={validateUsername}>
                 </TextInput>
+                <Text style={styles.errorMsg}>{ errorUsernameMsg }</Text>
               </View>
               
               <View style={styles.inputBox}>
@@ -83,6 +93,7 @@ const Register = ({ navigation }) => {
                           secureTextEntry={true} 
                           onEndEditing={checkPwdFormat}>
                 </TextInput>
+                <Text style={styles.errorMsg}>{ errorPwdMsg }</Text>
               </View>
 
               <TouchableOpacity style={styles.submitButton} onPress={onSubmit}>
@@ -91,7 +102,9 @@ const Register = ({ navigation }) => {
 
               <View style={styles.connexionBox}>
                 <Text style={styles.connexionText}>Déjà un compte ?</Text>
-                <TouchableOpacity><Text style={styles.connexion}> Connexion</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.push('login')}>
+                  <Text style={styles.connexion}> Connexion</Text>
+                  </TouchableOpacity>
               </View>
 
             </View>

@@ -24,9 +24,10 @@ export const styles = StyleSheet.create({
 
   label : {
     marginTop : 30,
-    marginBottom : 30,
+    marginBottom : 20,
     fontSize : 30,
     color : '#ffff',
+    fontFamily: 'MuktaMahee-Regular'
   },
 
   inputBox : {
@@ -37,6 +38,7 @@ export const styles = StyleSheet.create({
   inputLabel : {
     fontSize : 20,
     color : '#ffff',
+    fontFamily: 'MuktaMahee-Regular'
   },
 
   errorInputLabel : {
@@ -69,23 +71,39 @@ export const styles = StyleSheet.create({
     height : 50,
     justifyContent : 'center',
     alignItems: 'center',
-    borderRadius : 10
+    borderRadius : 10,
+    marginTop : 20,
   },
 
   connexionText : {
     fontSize : 20,
     color : '#ffff',
+    fontFamily: 'MuktaMahee-Regular'
   },
 
   connexion : {
     fontSize : 20,
     color : '#006CEA',
+    fontFamily: 'MuktaMahee-Regular'
   },
 
   connexionBox : {
     flexDirection : 'row',
     marginTop : 20,
     fontFamily: 'MuktaMahee-Regular'
+  },
+
+  errorMsg : {
+    color : '#EE0000',
+    textAlign : 'center',
+    width : 300
+  },
+
+  errorMsgGlobal : {
+    color : '#EE0000',
+    textAlign : 'center',
+    width : 300,
+    fontSize : 20
   }
 
 });
