@@ -3,9 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import QuizScreen from '../screens/quizScreen/QuizScreen';
 import Favourites from '../screens/Favourites';
-import List from '../screens/List';
 import { Icon } from '@rneui/themed';
-import TestMap from '../screens/TestMap';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,16 +37,6 @@ const TabNavigator = () => {
           )
         }}
       />
-      <Tab.Screen
-        name="testMap"
-        component={TestMap}
-        options={{
-          tabBarIcon: () => (
-            <Icon type="font-awesome" name="trash-o" color="#000" />
-          )
-        }}
-      />
-      <Tab.Screen name="list" component={List} />
     </Tab.Navigator>
   );
 };

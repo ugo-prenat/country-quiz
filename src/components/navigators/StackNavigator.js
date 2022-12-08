@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Favourites from '../screens/Favourites';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
-import List from '../screens/List';
 import TabNavigator from './TabNavigator';
 import QuizScreen from '../screens/quizScreen/QuizScreen';
 import QuizQuestionScreen from '../screens/quizScreen/QuizQuestionScreen';
@@ -17,12 +16,11 @@ const StackNavigator = () => {
       screenOptions={{
         headerShown: false
       }}
-      initialRouteName="register"
+      initialRouteName="home"
     >
       <Stack.Screen name="home" component={TabNavigator} />
       <Stack.Screen name="register" component={Register} />
       <Stack.Screen name="favourites" component={Favourites} />
-      <Stack.Screen name="list" component={List} />
       <Stack.Screen name="login" component={Login} />
 
       <Stack.Screen name="quiz" component={QuizScreen} />

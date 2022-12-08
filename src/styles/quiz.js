@@ -5,7 +5,8 @@ const blue = '#006CEA';
 export const styles = StyleSheet.create({
   pageContainer: {
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'white'
   },
   quizQuestionContainer: {
     justifyContent: 'flex-start'
