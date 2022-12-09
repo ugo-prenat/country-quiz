@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   SafeAreaView,
   View,
   Text,
   ActivityIndicator,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput
 } from 'react-native';
 import { styles } from '../../styles/home';
 import CountryCard from '../CountryCard';
@@ -15,6 +16,7 @@ const CountryList = ({ navigation, route }) => {
   const { region } = route.params;
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState('');
 
   const getCountries = async () => {
     try {
@@ -32,6 +34,14 @@ const CountryList = ({ navigation, route }) => {
     }
   };
 
+  const filteredCountries = useMemo(() => {
+    return data.filter((country) =>
+      country.translations.fra.common
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    );
+  }, [data, search]);
+
   useEffect(() => {
     getCountries();
   }, []);
@@ -46,13 +56,23 @@ const CountryList = ({ navigation, route }) => {
           <Icon name="arrow-left" type="font-awesome" color="#888" />
           <Text> Retour</Text>
         </TouchableOpacity>
+
         <Text>{region === 'all' ? 'Tous les pays' : region}</Text>
+
+        <TextInput
+          defaultValue={search}
+          onChangeText={setSearch}
+          placeholder={'Rechercher un pays'}
+        />
+
         {isLoading ? (
           <ActivityIndicator />
+        ) : filteredCountries.length === 0 ? (
+          <Text>Aucun pays trouvé</Text>
         ) : (
           <FlatList
             style={{ padding: 24 }}
-            data={data}
+            data={filteredCountries}
             keyExtractor={({ altSpellings }) => altSpellings}
             renderItem={({ item }) => (
               <CountryCard country={item} navigation={navigation} />
