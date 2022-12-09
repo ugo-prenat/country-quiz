@@ -109,7 +109,8 @@ export const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 40,
     borderBottomWidth: 2,
-    borderColor: '#A2A2A2'
+    borderColor: '#A2A2A2',
+    marginHorizontal : 20
   },
   textCardAllCountry: {
     display: 'row',

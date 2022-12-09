@@ -108,5 +108,9 @@ export const styles = StyleSheet.create({
         fontFamily : 'MuktaMahee-Regular',
         marginTop : 10
     },
+
+    flatList : {
+        width : Dimensions.get('window').width
+    }
     
 });

@@ -2,6 +2,7 @@ import { Icon } from '@rneui/themed';
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   Image,
+  ImageBackground,
   Pressable,
   SafeAreaView,
   Text,
@@ -67,81 +68,81 @@ const Info = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <TouchableOpacity
-        style={[styles.goBack]}
-        onPress={() => navigation.goBack()}
-      >
-        <Icon name="arrow-left" type="font-awesome" color="#888" />
-        <Text> Retour</Text>
-      </TouchableOpacity>
-      <Image
-        source={{
-          uri: hasLoad
-            ? data.flags.png
-            : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'
-        }}
-        style={{
-          height: 175,
-          marginVertical: 20
-        }}
-        resizeMode="contain"
-      />
-      <Text style={[styles.title]}>
-        {hasLoad && data.name
-          ? `${data.translations.fra.common} (${data.cca3})`
-          : ''}
-      </Text>
-      <View style={[styles.container]}>
-        <View style={[styles.col]}>
-          <Text style={[styles.data]}>
-            <Icon style={styles.dataIcon} name="users" type="font-awesome" />
-            <Text> {hasLoad ? data.population : '---'}</Text>
-          </Text>
-          <Text style={[styles.data]}>
-            <Icon style={styles.dataIcon} name="house" type="" />
-            <Text>
-              {hasLoad && data.capital ? data.capital.join(', ') : '---'}
-            </Text>
-          </Text>
+      <ImageBackground
+      source={require('../../assets/bg_gradient.png')}
+      resizeMode='cover'
+      style={styles.background_image}>
+
+        <View style={styles.containerCountry}>
+
+        <View style={styles.header_bar}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Image
+                source={require('../../assets/logo_header.png')}
+                style={styles.logo_appBar}>
+            </Image>
+          </TouchableOpacity>
         </View>
-        <View style={[styles.col]}>
-          <Text style={[styles.data]}>
-            <Icon style={styles.dataIcon} name="map" type="" />
-            <Text>{hasLoad ? data.subregion : '---'}</Text>
-          </Text>
-          <Text style={[styles.data]}>
-            <Icon style={styles.dataIcon} name="euro" type="font-awesome" />
-            <Text>
-              {hasLoad && data.currencies
-                ? getAllCurrencies(data.currencies)
-                : '---'}
+
+          <Image source={{
+                  uri: hasLoad
+                  ? data.flags.png
+                  : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'}}
+                style={styles.flag}
+                resizeMode="contain"/>
+                
+              <Text style={[styles.title]}>
+                {hasLoad && data.name
+                  ? `${data.translations.fra.common} (${data.cca3})`
+                  : ''}
+              </Text>
+
+              <View style={[styles.container]}>
+                <View style={[styles.col]}>
+                  <View style={[styles.data]}>
+                    <Icon style={styles.dataIcon} name="users" type="font-awesome" color="#fff" />
+                    <Text style={styles.textData}> {hasLoad ? data.population : '---'}</Text>
+                  </View>
+                  <View style={[styles.data]}>
+                    <Icon style={styles.dataIcon} name="house" type="" color="#fff" />
+                    <Text style={styles.textData}>{hasLoad && data.capital ? data.capital.join(', ') : '---'}</Text>
+                  </View>
+                </View>
+              <View style={[styles.col]}>
+                <View style={[styles.data]}>
+                  <Icon style={styles.dataIcon} name="map" type="" color="#fff" />
+                  <Text style={styles.textData}>{hasLoad ? data.subregion : '---'}</Text>
+                </View>
+                <View style={[styles.data]}>
+                  <Icon style={styles.dataIcon} name="euro" type="font-awesome" color="#fff" />
+                  <Text style={styles.textData}>{hasLoad && data.currencies ? getAllCurrencies(data.currencies) : '---'}
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <Text style={[styles.distance]}>
+              Vous vous situez à {distance} km de ce pays
             </Text>
-          </Text>
-        </View>
-      </View>
-      <Text style={[styles.distance]}>
-        Vous vous situez à {distance} km de ce pays
-      </Text>
-      <View style={styles.favBtnContainer}>
-        <Pressable
-          style={[
-            styles.favBtn,
-            !isCountryFavourite ? styles.deleteFavBtn : ''
-          ]}
-          onPress={handleFavouriteClick}
-        >
-          <Text
-            style={[
-              styles.favBtnText,
-              !isCountryFavourite ? styles.deleteFavBtnText : ''
-            ]}
-          >
-            {isCountryFavourite
-              ? 'Supprimer des favoris'
-              : 'Ajouter aux favoris'}
-          </Text>
-        </Pressable>
-      </View>
+            <View style={styles.favBtnContainer}>
+              <Pressable
+                style={[
+                  styles.favBtn,
+                  !isCountryFavourite ? styles.deleteFavBtn : ''
+                ]}
+                onPress={handleFavouriteClick}>
+                <Text
+                  style={[
+                    styles.favBtnText,
+                    !isCountryFavourite ? styles.deleteFavBtnText : ''
+                  ]}>
+                  {isCountryFavourite
+                    ? 'Supprimer des favoris'
+                    : 'Ajouter aux favoris'}
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -163,3 +164,5 @@ const getDistanceBetweenUserAndCountry = async (country) => {
 };
 
 export default Info;
+
+

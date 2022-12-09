@@ -8,7 +8,8 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
-  TextInput
+  TextInput,
+  Dimensions
 } from 'react-native';
 import { styles } from '../../styles/home';
 import CountryCard from '../CountryCard';
@@ -57,40 +58,40 @@ const CountryList = ({ navigation, route }) => {
 
         <View style={styles.container}>
         
-        <View style={styles.header_bar}>
+          <View style={styles.header_bar}>
 
-            <TouchableOpacity onPress={() => navigation.push('home')}>
-              <Image
-                source={require('../../assets/logo_header.png')}
-                style={styles.logo_appBar}>
-              </Image>
-            </TouchableOpacity>
-        </View>
+              <TouchableOpacity onPress={() => navigation.push('home')}>
+                <Image
+                  source={require('../../assets/logo_header.png')}
+                  style={styles.logo_appBar}>
+                </Image>
+              </TouchableOpacity>
+          </View>
 
-        <Text style={styles.labelCountry}>{name}</Text>
+          <Text style={styles.labelCountry}>{name}</Text>
 
-        <TextInput
-          defaultValue={search}
-          onChangeText={setSearch}
-          style={styles.searchbar}
-          placeholder={'Rechercher un pays'}
-          placeholderTextColor={'#fff'}/>
+          <TextInput
+            defaultValue={search}
+            onChangeText={setSearch}
+            style={styles.searchbar}
+            placeholder={'Rechercher un pays'}
+            placeholderTextColor={'#fff'}/>
 
-          {isLoading ? (
-            <ActivityIndicator />
-          ) : filteredCountries.length === 0 ? (
-            <Text style={styles.countryNotFound}>Aucun pays trouvé</Text>
-          ) : (
-            <FlatList
-              style={{ padding: 24 }}
-              data={filteredCountries}
-              keyExtractor={({ altSpellings }) => altSpellings}
-              renderItem={({ item }) => (
-                <CountryCard country={item} navigation={navigation}/>
-              )}
-              />
-              )}
-        </View>
+            {isLoading ? (
+              <ActivityIndicator />
+            ) : filteredCountries.length === 0 ? (
+              <Text style={styles.countryNotFound}>Aucun pays trouvé</Text>
+            ) : (
+              <FlatList
+                style={styles.flatList}
+                data={filteredCountries}
+                keyExtractor={({ altSpellings }) => altSpellings}
+                renderItem={({ item }) => (
+                  <CountryCard country={item} navigation={navigation}/>
+                )}
+                />
+                )}
+          </View>
       </ImageBackground>
     </SafeAreaView>
   );

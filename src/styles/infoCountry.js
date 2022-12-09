@@ -1,24 +1,46 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 const blue = '#006CEA';
 
 export const styles = StyleSheet.create({
-  goBack: {
-    borderColor: '#000000',
-    borderBottomWidth: 1,
-    padding: 10,
-    marginBottom: 5,
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  title: {
-    fontSize: 40,
-    alignSelf: 'center'
+  
+  safeArea : {
+    flex : 1
   },
 
+  background_image: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+
+  header_bar : {
+    width : Dimensions.get('window').width,
+    height : 80,
+    alignItems : 'flex-start',
+    paddingLeft : 20,
+},
+
+  containerCountry : {
+    flex : 1,
+    alignItems : 'center',
+  },
+  
+  logo_appBar : {
+    width : 180,
+    height : 80,
+  },
+
+  flag : {
+    width: 250,
+    height: 250,
+  },
+
+  title : {
+    fontSize : 30,
+    fontFamily : 'MuktaMahee-Regular',
+    color : '#fff',
+  },  
+  
   container: {
     flexDirection: 'row',
     flexWrap: 'nowrap',
@@ -33,20 +55,28 @@ export const styles = StyleSheet.create({
   },
 
   data: {
+    flexDirection : 'row',
+    alignItems : 'center',
     marginVertical: 5,
     fontSize: 18
-    //flexDirection: "row",
-    //justifyContent: "space-evenly",
-    //alignItems: "center",
-    //backgroundColor: "red",
   },
+  
   dataIcon: {
-    width: 30
+    width: 30,
   },
+
+  textData : {
+    color : '#fff',
+    fontSize : 18,
+    fontFamily : 'MuktaMahee-Regular',
+  },  
 
   distance: {
     alignSelf: 'center',
-    marginTop: 20
+    marginTop: 20,
+    color : '#fff',
+    fontFamily : 'MuktaMahee-Regular',
+    fontSize : 20
   },
   favBtnContainer: {
     flexDirection: 'row',
@@ -61,10 +91,11 @@ export const styles = StyleSheet.create({
     borderRadius: 5
   },
   deleteFavBtn: {
-    backgroundColor: blue
+    backgroundColor: blue,
   },
   favBtnText: {
-    color: blue
+    color: blue,
+    fontFamily : 'MuktaMahee-Regular',
   },
   deleteFavBtnText: {
     color: 'white'
