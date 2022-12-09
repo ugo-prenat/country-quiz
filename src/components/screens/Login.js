@@ -9,7 +9,7 @@ import {
   ScrollView,
   Alert
 } from 'react-native';
-import { styles } from '../../styles/styles';
+import { styles } from '../../styles/login';
 import { isEmailExists, isPwdCorrects, loginUser } from '../asyncStorageHelper';
 
 const Login = ({ navigation }) => {

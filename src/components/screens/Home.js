@@ -6,48 +6,45 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
-import { styles } from '../../styles/styles';
-import { resetFavourites } from '../asyncStorageHelper';
-import CountryCard from '../CountryCard';
+import { styles } from '../../styles/home';
 
 const Home = ({ navigation }) => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-
-  const getCountries = async () => {
-    try {
-      const response = await fetch('https://restcountries.com/v3.1/all');
-      const json = await response.json();
-      setData(json);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getCountries();
-  }, []);
-
+  
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View>
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : (
-          <FlatList
-            style={{ padding: 24 }}
-            data={data}
-            keyExtractor={({ altSpellings }) => altSpellings}
-            renderItem={({ item }) => (
-              <CountryCard country={item} navigation={navigation} />
-            )}
-          />
-        )}
-      </View>
+      <ImageBackground 
+        source={require('../../assets/bg_gradient.png')}
+        resizeMode="cover"
+        style={styles.background_image}>
+        
+        <View style = {styles.container}>
+
+          <TouchableOpacity style={styles.coutryButton} onPress={() => navigation.push('countryList', {region: 'all'})}>
+            <Text>Tous les pays</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.coutryButton} onPress={() => navigation.push('countryList',{ region: 'europe'})}>
+            <Text>Europe</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.coutryButton} onPress={() => navigation.push('countryList',{ region: 'america'})}>
+            <Text>Amériques</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.coutryButton} onPress={() => navigation.push('countryList', {region: 'africa'})}>
+            <Text>Afrique</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.coutryButton} onPress={() => navigation.push('countryList', {region: 'asia'})}>
+            <Text>Asie</Text>
+          </TouchableOpacity>
+
+        </View>
+        
+      </ImageBackground>
     </SafeAreaView>
   );
 };

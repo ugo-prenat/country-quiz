@@ -9,7 +9,7 @@ import {
   Alert,
   ScrollView
 } from 'react-native';
-import { styles } from '../../styles/styles';
+import { styles } from '../../styles/login';
 import {
   isEmailExists,
   isUsernameExists,

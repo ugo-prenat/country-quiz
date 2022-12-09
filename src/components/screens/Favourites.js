@@ -7,7 +7,7 @@ import {
   FlatList,
   Text
 } from 'react-native';
-import { styles } from '../../styles/styles';
+import { styles } from '../../styles/login';
 import { getUserFavourites, resetFavourites } from '../asyncStorageHelper';
 import CountryCard from '../CountryCard';
 
