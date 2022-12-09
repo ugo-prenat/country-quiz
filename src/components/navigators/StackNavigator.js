@@ -8,6 +8,7 @@ import QuizResultScreen from '../screens/quizScreen/QuizResultScreen';
 import InfoCountry from '../screens/InfoCountry';
 import Register from '../screens/Register';
 import Login from '../screens/Login';
+import About from "../screens/About";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
       }}
       initialRouteName="register"
     >
@@ -29,6 +30,8 @@ const StackNavigator = () => {
       <Stack.Screen name="quizResult" component={QuizResultScreen} />
 
       <Stack.Screen name="infoCountry" component={InfoCountry} />
+
+      <Stack.Screen name="about" component={About} />
     </Stack.Navigator>
   );
 };
