@@ -10,3 +10,14 @@ export const getQuestions = () => {
       propositions: question.propositions.sort(() => Math.random() - 0.5)
     }));
 };
+export const saveQuizResult = async (result) => {
+  const quizHistoric = await AsyncStorage.getItem('quizResults');
+  const newHistoric = quizHistoric
+    ? JSON.parse(quizHistoric).concat([result])
+    : [result];
+  await AsyncStorage.setItem('quizResults', JSON.stringify(newHistoric));
+};
+export const getResultsHistoric = async () => {
+  const quizHistoric = await AsyncStorage.getItem('quizResults');
+  return quizHistoric ? JSON.parse(quizHistoric) : [];
+};
