@@ -69,80 +69,109 @@ const Info = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ImageBackground
-      source={require('../../assets/bg_gradient.png')}
-      resizeMode='cover'
-      style={styles.background_image}>
-
+        source={require('../../assets/bg_gradient.png')}
+        resizeMode="cover"
+        style={styles.background_image}
+      >
         <View style={styles.containerCountry}>
-
-        <View style={styles.header_bar}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image
+          <View style={styles.header_bar}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image
                 source={require('../../assets/logo_header.png')}
-                style={styles.logo_appBar}>
-            </Image>
-          </TouchableOpacity>
-        </View>
+                style={styles.logo_appBar}
+              ></Image>
+            </TouchableOpacity>
+          </View>
 
-          <Image source={{
-                  uri: hasLoad
-                  ? data.flags.png
-                  : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'}}
-                style={styles.flag}
-                resizeMode="contain"/>
-                
-              <Text style={[styles.title]}>
-                {hasLoad && data.name
-                  ? `${data.translations.fra.common} (${data.cca3})`
-                  : ''}
-              </Text>
+          <Image
+            source={{
+              uri: hasLoad
+                ? data.flags.png
+                : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'
+            }}
+            style={styles.flag}
+            resizeMode="contain"
+          />
 
-              <View style={[styles.container]}>
-                <View style={[styles.col]}>
-                  <View style={[styles.data]}>
-                    <Icon style={styles.dataIcon} name="users" type="font-awesome" color="#fff" />
-                    <Text style={styles.textData}> {hasLoad ? data.population : '---'}</Text>
-                  </View>
-                  <View style={[styles.data]}>
-                    <Icon style={styles.dataIcon} name="house" type="" color="#fff" />
-                    <Text style={styles.textData}>{hasLoad && data.capital ? data.capital.join(', ') : '---'}</Text>
-                  </View>
-                </View>
-              <View style={[styles.col]}>
-                <View style={[styles.data]}>
-                  <Icon style={styles.dataIcon} name="map" type="" color="#fff" />
-                  <Text style={styles.textData}>{hasLoad ? data.subregion : '---'}</Text>
-                </View>
-                <View style={[styles.data]}>
-                  <Icon style={styles.dataIcon} name="euro" type="font-awesome" color="#fff" />
-                  <Text style={styles.textData}>{hasLoad && data.currencies ? getAllCurrencies(data.currencies) : '---'}
-                  </Text>
-                </View>
+          <Text style={[styles.title]}>
+            {hasLoad && data.name
+              ? `${data.translations.fra.common} (${data.cca3})`
+              : ''}
+          </Text>
+
+          <View style={[styles.container]}>
+            <View style={[styles.col]}>
+              <View style={[styles.data]}>
+                <Icon
+                  style={styles.dataIcon}
+                  name="users"
+                  type="font-awesome"
+                  color="#fff"
+                />
+                <Text style={styles.textData}>
+                  {' '}
+                  {hasLoad ? data.population : '---'}
+                </Text>
+              </View>
+              <View style={[styles.data]}>
+                <Icon
+                  style={styles.dataIcon}
+                  name="house"
+                  type=""
+                  color="#fff"
+                />
+                <Text style={styles.textData}>
+                  {hasLoad && data.capital ? data.capital.join(', ') : '---'}
+                </Text>
               </View>
             </View>
-            <Text style={[styles.distance]}>
-              Vous vous situez à {distance} km de ce pays
-            </Text>
-            <View style={styles.favBtnContainer}>
-              <Pressable
-                style={[
-                  styles.favBtn,
-                  !isCountryFavourite ? styles.deleteFavBtn : ''
-                ]}
-                onPress={handleFavouriteClick}>
-                <Text
-                  style={[
-                    styles.favBtnText,
-                    !isCountryFavourite ? styles.deleteFavBtnText : ''
-                  ]}>
-                  {isCountryFavourite
-                    ? 'Supprimer des favoris'
-                    : 'Ajouter aux favoris'}
+            <View style={[styles.col]}>
+              <View style={[styles.data]}>
+                <Icon style={styles.dataIcon} name="map" type="" color="#fff" />
+                <Text style={styles.textData}>
+                  {hasLoad ? data.subregion : '---'}
                 </Text>
-              </Pressable>
+              </View>
+              <View style={[styles.data]}>
+                <Icon
+                  style={styles.dataIcon}
+                  name="euro"
+                  type="font-awesome"
+                  color="#fff"
+                />
+                <Text style={styles.textData}>
+                  {hasLoad && data.currencies
+                    ? getAllCurrencies(data.currencies)
+                    : '---'}
+                </Text>
+              </View>
             </View>
           </View>
-        </ImageBackground>
+          <Text style={[styles.distance]}>
+            Vous vous situez à {distance} km de ce pays
+          </Text>
+          <View style={styles.favBtnContainer}>
+            <Pressable
+              style={[
+                styles.favBtn,
+                !isCountryFavourite ? styles.deleteFavBtn : ''
+              ]}
+              onPress={handleFavouriteClick}
+            >
+              <Text
+                style={[
+                  styles.favBtnText,
+                  !isCountryFavourite ? styles.deleteFavBtnText : ''
+                ]}
+              >
+                {isCountryFavourite
+                  ? 'Supprimer des favoris'
+                  : 'Ajouter aux favoris'}
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -164,5 +193,3 @@ const getDistanceBetweenUserAndCountry = async (country) => {
 };
 
 export default Info;
-
-

@@ -1,3 +1,4 @@
+import { Icon } from '@rneui/themed';
 import React, { useCallback, useState } from 'react';
 import {
   Text,
@@ -20,6 +21,7 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState('');
   const [isPwdValidate, setIsPwdValidate] = useState(true);
   const [errorPwdMsg, setErrorPwdMsg] = useState('');
+  const [hidePwd, setHidePwd] = useState(true);
 
   const [errorForm, setErrorForm] = useState('');
 
@@ -102,13 +104,28 @@ const Login = ({ navigation }) => {
               >
                 Mot de Passe
               </Text>
-              <TextInput
-                style={[styles.input, !isPwdValidate && styles.errorInput]}
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry={true}
-                onEndEditing={checkPwdFormat}
-              ></TextInput>
+              <View
+                style={[
+                  styles.input,
+                  {
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
+                ]}
+              >
+                <TextInput
+                  style={[styles.pwdInput, !isPwdValidate && styles.errorInput]}
+                  value={password}
+                  onChangeText={setPassword}
+                  secureTextEntry={hidePwd}
+                  onEndEditing={checkPwdFormat}
+                />
+                <Icon
+                  name="eye"
+                  type="material-community"
+                  onPress={() => setHidePwd(!hidePwd)}
+                />
+              </View>
               <Text style={styles.errorMsg}>{errorPwdMsg}</Text>
             </View>
 

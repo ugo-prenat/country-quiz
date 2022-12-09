@@ -55,6 +55,9 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
     color: '#000'
   },
+  pwdInput: {
+    width: 250
+  },
 
   errorInput: {
     borderColor: '#EE0000',
@@ -110,7 +113,7 @@ export const styles = StyleSheet.create({
     paddingTop: 40,
     borderBottomWidth: 2,
     borderColor: '#A2A2A2',
-    marginHorizontal : 20
+    marginHorizontal: 20
   },
   textCardAllCountry: {
     display: 'row',
@@ -123,14 +126,33 @@ export const styles = StyleSheet.create({
   textAllCountryFlags: {
     paddingVertical: 20,
     fontWeights: '900',
-    color : '#fff',
-    fontFamily : 'MuktaMahee-Regular',
-    fontSize : 20
+    color: '#fff',
+    fontFamily: 'MuktaMahee-Regular',
+    fontSize: 20
   },
   emptyFavourites: {
     alignSelf: 'center',
     fontSize: 13,
     color: 'grey',
     marginTop: 50
+  },
+
+  //#region About
+  title: {
+    alignSelf: 'center',
+    fontSize: 30,
+    fontFamily: 'MuktaMahee-Regular',
+    marginVertical: 40,
+    fontWeight: '700'
+  },
+  subtitle: {
+    marginHorizontal: 20,
+    fontSize: 20,
+    marginVertical: 20,
+    fontWeight: '600'
+  },
+  scrollViewContainer: {
+    margin: 15
   }
+  //#endregion
 });

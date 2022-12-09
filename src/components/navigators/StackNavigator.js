@@ -9,6 +9,7 @@ import InfoCountry from '../screens/InfoCountry';
 import Register from '../screens/Register';
 import Login from '../screens/Login';
 import CountryList from '../screens/CountryList';
+import About from '../screens/About';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,8 @@ const StackNavigator = () => {
       <Stack.Screen name="quizResult" component={QuizResultScreen} />
 
       <Stack.Screen name="infoCountry" component={InfoCountry} />
+
+      <Stack.Screen name="about" component={About} />
     </Stack.Navigator>
   );
 };
