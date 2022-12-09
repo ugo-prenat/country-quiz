@@ -1,22 +1,32 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from '../../../styles/quiz';
+import { getUserQuizResults } from './QuizHelper';
 
 const ResultHistoric = () => {
-  //const [historic, setHistoric] = useState([])
+  const [isLoading, setIsLoading] = useState(true);
+  const [historic, setHistoric] = useState();
 
-  const historic = useMemo(() => {
-    return ['2/5 - 40%', '3/5 - 60%', '4/5 - 80%', '5/5 - 100%'];
+  useEffect(() => {
+    const getHistoric = async () => {
+      setHistoric(await getUserQuizResults());
+      setIsLoading(false);
+    };
+    getHistoric();
   }, []);
 
   return (
-    <View>
-      <Text style={styles.text}>Historique des résultats</Text>
-      {historic.map((result, index) => (
-        <Text key={index} style={styles.text}>
-          {result}
-        </Text>
-      ))}
+    <View style={styles.historicContainer}>
+      {!isLoading && historic.length > 0 && (
+        <>
+          <Text style={styles.historicTitle}>Historique des résultats</Text>
+          {historic.map((item, index) => (
+            <Text style={styles.historicResult} key={index}>
+              {item.result}
+            </Text>
+          ))}
+        </>
+      )}
     </View>
   );
 };

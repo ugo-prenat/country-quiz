@@ -8,6 +8,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'white'
   },
+  startScreenContainer: {
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    backgroundColor: 'white'
+  },
+  title: {
+    fontSize: 20,
+    fontFamily: 'MuktaMahee-SemiBold',
+    textAlign: 'center'
+  },
   quizQuestionContainer: {
     justifyContent: 'flex-start'
   },
@@ -106,5 +116,14 @@ export const styles = StyleSheet.create({
     fontFamily: 'MuktaMahee-SemiBold',
     fontSize: 17,
     lineHeight: 22
+  },
+  historicContainer: {
+    opacity: 0.6
+  },
+  historicResult: {
+    textAlign: 'center'
+  },
+  historicTitle: {
+    marginBottom: 10
   }
 });

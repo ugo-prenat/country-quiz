@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Pressable, SafeAreaView, Text, View } from 'react-native';
-import { styles as genStyles } from '../../../styles/home';
+import { styles as genStyles } from '../../../styles/styles';
 import { styles } from '../../../styles/quiz';
 import { getQuestions, saveQuizResult } from './QuizHelper';
 
@@ -9,11 +9,12 @@ const QuizResultScreen = ({ route, navigation }) => {
   const goodAnswers = answers.filter((answer) => answer === true).length;
   const percentWin = Math.round((goodAnswers / answers.length) * 100);
 
-  const saveResult = async () => {
-    await saveQuizResult(`${goodAnswers}/${answers.length} - ${percentWin}%`);
-  };
+  useEffect(() => {
+    const saveResult = async () =>
+      await saveQuizResult(`${goodAnswers}/${answers.length} - ${percentWin}%`);
 
-  useEffect(() => saveResult(), []);
+    saveResult();
+  }, []);
 
   return (
     <SafeAreaView style={[genStyles.safeArea, styles.pageContainer]}>
