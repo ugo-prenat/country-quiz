@@ -1,7 +1,7 @@
-import React from "react";
-import { ScrollView, Text } from "react-native";
-import { SafeAreaView } from "react-native";
-import { styles } from "../../styles/styles";
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { styles } from '../../styles/about';
 
 const About = () => {
   return (

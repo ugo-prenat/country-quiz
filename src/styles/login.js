@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   safeArea: {
@@ -137,7 +137,16 @@ export const styles = StyleSheet.create({
     marginTop: 50
   },
 
-  //#region About
+  logo_appBar: {
+    width: 180,
+    height: 80
+  },
+  header_bar: {
+    width: Dimensions.get('window').width,
+    height: 80,
+    alignItems: 'flex-start',
+    paddingLeft: 20
+  },
   title: {
     alignSelf: 'center',
     fontSize: 30,
@@ -154,5 +163,4 @@ export const styles = StyleSheet.create({
   scrollViewContainer: {
     margin: 15
   }
-  //#endregion
 });
