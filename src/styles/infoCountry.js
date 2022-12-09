@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+const blue = '#006CEA';
+
 export const styles = StyleSheet.create({
   goBack: {
     borderColor: '#000000',
@@ -45,5 +47,26 @@ export const styles = StyleSheet.create({
   distance: {
     alignSelf: 'center',
     marginTop: 20
+  },
+  favBtnContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20
+  },
+  favBtn: {
+    borderColor: blue,
+    borderWidth: 1,
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 5
+  },
+  deleteFavBtn: {
+    backgroundColor: blue
+  },
+  favBtnText: {
+    color: blue
+  },
+  deleteFavBtnText: {
+    color: 'white'
   }
 });

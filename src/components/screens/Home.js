@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   View,
@@ -6,9 +6,11 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
-  TouchableOpacity,
-} from "react-native";
-import { styles } from "../../styles/home";
+  TouchableOpacity
+} from 'react-native';
+import { styles } from '../../styles/styles';
+import { resetFavourites } from '../asyncStorageHelper';
+import CountryCard from '../CountryCard';
 
 const Home = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ const Home = ({ navigation }) => {
 
   const getCountries = async () => {
     try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
+      const response = await fetch('https://restcountries.com/v3.1/all');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -47,29 +49,6 @@ const Home = ({ navigation }) => {
         )}
       </View>
     </SafeAreaView>
-  );
-};
-
-const CountryCard = ({ country, navigation }) => {
-  return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate("infoCountry", {
-          countryName: country.name.common,
-        })
-      }
-    >
-      <View style={styles.viewCardAllCountry}>
-        <Image
-          style={styles.imageAllCountryFlags}
-          source={{ uri: country.flags.png }}
-          resizeMode="contain"
-        />
-        <Text style={styles.textAllCountryFlags}>
-          {country.translations.fra.common}
-        </Text>
-      </View>
-    </TouchableOpacity>
   );
 };
 
