@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Pressable, SafeAreaView, Text, View } from 'react-native';
-import { styles as genStyles } from '../../../styles/styles';
+import { styles as genStyles } from '../../../styles/home';
 import { styles } from '../../../styles/quiz';
 import { getQuestions, saveQuizResult } from './QuizHelper';
 

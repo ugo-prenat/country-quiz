@@ -1,5 +1,5 @@
-import { Icon } from "@rneui/themed";
-import React, { useCallback, useState } from "react";
+import { Icon } from '@rneui/themed';
+import React, { useCallback, useState } from 'react';
 import {
   Text,
   ImageBackground,
@@ -8,27 +8,27 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
-  Alert,
-} from "react-native";
-import { styles } from "../../styles/styles";
-import { isEmailExists, isPwdCorrects, loginUser } from "../asyncStorageHelper";
+  Alert
+} from 'react-native';
+import { styles } from '../../styles/login';
+import { isEmailExists, isPwdCorrects, loginUser } from '../asyncStorageHelper';
 
 const Login = ({ navigation }) => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [isEmailValidate, setIsEmailValidate] = useState(true);
-  const [errorEmailMsg, setErrorEmailMsg] = useState("");
+  const [errorEmailMsg, setErrorEmailMsg] = useState('');
 
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState('');
   const [isPwdValidate, setIsPwdValidate] = useState(true);
-  const [errorPwdMsg, setErrorPwdMsg] = useState("");
+  const [errorPwdMsg, setErrorPwdMsg] = useState('');
   const [hidePwd, setHidePwd] = useState(true);
 
-  const [errorForm, setErrorForm] = useState("");
+  const [errorForm, setErrorForm] = useState('');
 
   const checkEmailFormat = useCallback(() => {
     const regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
     if (!regExpEmail.test(email)) {
-      setErrorEmailMsg("Votre email est invalide");
+      setErrorEmailMsg('Votre email est invalide');
     }
   }, [email, setEmail]);
 
@@ -41,36 +41,36 @@ const Login = ({ navigation }) => {
     let regExpPwd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!regExpPwd.test(password)) {
       setErrorPwdMsg(
-        "Votre mot de passe doit contenir 8 caractères dont 1 lettre, 1 nombre et un caractère spécial."
+        'Votre mot de passe doit contenir 8 caractères dont 1 lettre, 1 nombre et un caractère spécial.'
       );
     }
   }, [password, setPassword]);
 
   const onSubmit = useCallback(async () => {
     if (!email || !password || !isEmailValidate || !isPwdValidate) {
-      setErrorForm("Veuillez renseigner tous les champs.");
+      setErrorForm('Veuillez renseigner tous les champs.');
       return;
     }
 
-    if (!(await isEmailExists(email))) return setErrorForm("Email invalide");
+    if (!(await isEmailExists(email))) return setErrorForm('Email invalide');
     if (!(await isPwdCorrects(email, password)))
-      return setErrorForm("Mot de passe invalide");
+      return setErrorForm('Mot de passe invalide');
 
     await loginUser(email);
-    navigation.push("home");
+    navigation.push('home');
   }, [email, password, isEmailValidate, isPwdValidate]);
 
   return (
     <View style={styles.safeArea}>
       <ImageBackground
-        source={require("../../assets/bg_gradient.png")}
+        source={require('../../assets/bg_gradient.png')}
         resizeMode="cover"
         style={styles.background_image}
       >
         <ScrollView style={styles.safeArea}>
           <View style={styles.container}>
             <Image
-              source={require("../../assets/logo_app.png")}
+              source={require('../../assets/logo_app.png')}
               style={styles.logo}
             ></Image>
             <Text style={styles.label}>Connexion</Text>
@@ -81,7 +81,7 @@ const Login = ({ navigation }) => {
               <Text
                 style={[
                   styles.inputLabel,
-                  !isEmailValidate && styles.errorInputLabel,
+                  !isEmailValidate && styles.errorInputLabel
                 ]}
               >
                 Email
@@ -99,7 +99,7 @@ const Login = ({ navigation }) => {
               <Text
                 style={[
                   styles.inputLabel,
-                  !isPwdValidate && styles.errorInputLabel,
+                  !isPwdValidate && styles.errorInputLabel
                 ]}
               >
                 Mot de Passe
@@ -108,9 +108,9 @@ const Login = ({ navigation }) => {
                 style={[
                   styles.input,
                   {
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <TextInput
@@ -135,7 +135,7 @@ const Login = ({ navigation }) => {
 
             <View style={styles.connexionBox}>
               <Text style={styles.connexionText}>Pas de compte ?</Text>
-              <TouchableOpacity onPress={() => navigation.push("register")}>
+              <TouchableOpacity onPress={() => navigation.push('register')}>
                 <Text style={styles.connexion}> Inscription</Text>
               </TouchableOpacity>
             </View>

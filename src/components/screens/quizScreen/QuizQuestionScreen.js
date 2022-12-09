@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, Image, View, Pressable } from 'react-native';
-import { styles as genStyles } from '../../../styles/styles';
+import { styles as genStyles } from '../../../styles/home';
 import { styles } from '../../../styles/quiz';
 import PropositionBtn from './PropositionBtn';
 

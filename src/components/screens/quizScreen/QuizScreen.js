@@ -1,6 +1,6 @@
 import React from 'react';
-import { Pressable, SafeAreaView, Text, View } from 'react-native';
-import { styles as genStyles } from '../../../styles/styles';
+import { Pressable, SafeAreaView, Text } from 'react-native';
+import { styles as genStyles } from '../../../styles/login';
 import { styles } from '../../../styles/quiz';
 import { getQuestions } from './QuizHelper';
 import ResultHistoric from './ResultsHistoric';

@@ -5,10 +5,14 @@ import {
   SafeAreaView,
   View,
   FlatList,
-  Text
+  Text,
+  ImageBackground,
+  Dimensions,
+  TouchableOpacity,
+  Image
 } from 'react-native';
-import { styles } from '../../styles/styles';
-import { getUserFavourites, resetFavourites } from '../asyncStorageHelper';
+import { styles } from '../../styles/login';
+import { getUserFavourites } from '../asyncStorageHelper';
 import CountryCard from '../CountryCard';
 
 const Favourites = ({ navigation }) => {
@@ -27,22 +31,41 @@ const Favourites = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View>
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : favourites.length === 0 ? (
-          <Text style={styles.emptyFavourites}>Aucun favoris trouvé</Text>
-        ) : (
-          <FlatList
-            style={{ padding: 24 }}
-            data={favourites}
-            key={favourites.id}
-            renderItem={(favourite) => (
-              <CountryCard country={favourite.item} navigation={navigation} />
+      <ImageBackground
+        source={require('../../assets/bg_gradient.png')}
+        resizeMode="cover"
+        style={styles.background_image}
+      >
+        <View style={styles.container}>
+          <View style={styles.header_bar}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image
+                source={require('../../assets/logo_header.png')}
+                style={styles.logo_appBar}
+              ></Image>
+            </TouchableOpacity>
+          </View>
+          <View>
+            {isLoading ? (
+              <ActivityIndicator />
+            ) : favourites.length === 0 ? (
+              <Text style={styles.emptyFavourites}>Aucun favoris trouvé</Text>
+            ) : (
+              <FlatList
+                style={{ width: Dimensions.get('window').width }}
+                data={favourites}
+                key={favourites.id}
+                renderItem={(favourite) => (
+                  <CountryCard
+                    country={favourite.item}
+                    navigation={navigation}
+                  />
+                )}
+              />
             )}
-          />
-        )}
-      </View>
+          </View>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };

@@ -1,5 +1,5 @@
-import { Icon } from "@rneui/themed";
-import React, { useCallback, useState, useEffect } from "react";
+import { Icon } from '@rneui/themed';
+import React, { useCallback, useState, useEffect } from 'react';
 import {
   Text,
   ImageBackground,
@@ -8,35 +8,35 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-  ScrollView,
-} from "react-native";
-import { styles } from "../../styles/styles";
+  ScrollView
+} from 'react-native';
+import { styles } from '../../styles/login';
 import {
   isEmailExists,
   isUsernameExists,
-  registerUser,
-} from "../asyncStorageHelper";
+  registerUser
+} from '../asyncStorageHelper';
 
 const Register = ({ navigation }) => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [isEmailValidate, setIsEmailValidate] = useState(true);
-  const [errorEmailMsg, setErrorEmailMsg] = useState("");
+  const [errorEmailMsg, setErrorEmailMsg] = useState('');
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState('');
   const [isUsernameValidate, setIsUsernameValidate] = useState(true);
-  const [errorUsernameMsg, setErrorUsernameMsg] = useState("");
+  const [errorUsernameMsg, setErrorUsernameMsg] = useState('');
 
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState('');
   const [isPwdValidate, setIsPwdValidate] = useState(true);
-  const [errorPwdMsg, setErrorPwdMsg] = useState("");
+  const [errorPwdMsg, setErrorPwdMsg] = useState('');
   const [hidePwd, setHidePwd] = useState(true);
 
-  const [errorForm, setErrorForm] = useState("");
+  const [errorForm, setErrorForm] = useState('');
 
   const checkEmailFormat = useCallback(() => {
     const regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
     if (!regExpEmail.test(email)) {
-      setErrorEmailMsg("Votre email est invalide");
+      setErrorEmailMsg('Votre email est invalide');
     }
   }, [email, setEmail]);
 
@@ -47,7 +47,7 @@ const Register = ({ navigation }) => {
 
   const validateUsername = useCallback(() => {
     if (username.length < 3) {
-      setErrorUsernameMsg("Votre pseudo doit contenir au moins 5 caractères.");
+      setErrorUsernameMsg('Votre pseudo doit contenir au moins 5 caractères.');
     }
   }, [username, setIsUsernameValidate]);
 
@@ -55,7 +55,7 @@ const Register = ({ navigation }) => {
     let regExpPwd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!regExpPwd.test(password)) {
       setErrorPwdMsg(
-        "Votre mot de passe doit contenir 8 caractères dont 1 lettre, 1 nombre et un caractère spécial."
+        'Votre mot de passe doit contenir 8 caractères dont 1 lettre, 1 nombre et un caractère spécial.'
       );
     }
   }, [password, setPassword]);
@@ -69,17 +69,17 @@ const Register = ({ navigation }) => {
       !isUsernameValidate ||
       !isPwdValidate
     ) {
-      setErrorForm("Veuillez renseigner tous les champs.");
+      setErrorForm('Veuillez renseigner tous les champs.');
       return;
     }
 
     if (await isEmailExists(email))
-      return setErrorForm("Cet email est déjà utilisé.");
+      return setErrorForm('Cet email est déjà utilisé.');
     if (await isUsernameExists(username))
       return setErrorForm("Ce nom d'utilisateur est déjà utilisé.");
 
     await registerUser(email, username, password);
-    navigation.push("home");
+    navigation.push('home');
 
     /* Alert.alert(
       'Merci de votre inscription ' +
@@ -93,20 +93,20 @@ const Register = ({ navigation }) => {
     password,
     isEmailValidate,
     isUsernameValidate,
-    isPwdValidate,
+    isPwdValidate
   ]);
 
   return (
     <View style={styles.safeArea}>
       <ImageBackground
-        source={require("../../assets/bg_gradient.png")}
+        source={require('../../assets/bg_gradient.png')}
         resizeMode="cover"
         style={styles.background_image}
       >
         <ScrollView style={styles.safeArea}>
           <View style={styles.container}>
             <Image
-              source={require("../../assets/logo_app.png")}
+              source={require('../../assets/logo_app.png')}
               style={styles.logo}
             ></Image>
             <Text style={styles.label}>Inscription</Text>
@@ -117,7 +117,7 @@ const Register = ({ navigation }) => {
               <Text
                 style={[
                   styles.inputLabel,
-                  !isEmailValidate && styles.errorInputLabel,
+                  !isEmailValidate && styles.errorInputLabel
                 ]}
               >
                 Email
@@ -134,7 +134,7 @@ const Register = ({ navigation }) => {
               <Text
                 style={[
                   styles.inputLabel,
-                  !isUsernameValidate && styles.errorInputLabel,
+                  !isUsernameValidate && styles.errorInputLabel
                 ]}
               >
                 Nom d'utilisateur
@@ -152,7 +152,7 @@ const Register = ({ navigation }) => {
               <Text
                 style={[
                   styles.inputLabel,
-                  !isPwdValidate && styles.errorInputLabel,
+                  !isPwdValidate && styles.errorInputLabel
                 ]}
               >
                 Mot de Passe
@@ -161,9 +161,9 @@ const Register = ({ navigation }) => {
                 style={[
                   styles.input,
                   {
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <TextInput
@@ -188,7 +188,7 @@ const Register = ({ navigation }) => {
 
             <View style={styles.connexionBox}>
               <Text style={styles.connexionText}>Déjà un compte ?</Text>
-              <TouchableOpacity onPress={() => navigation.push("login")}>
+              <TouchableOpacity onPress={() => navigation.push('login')}>
                 <Text style={styles.connexion}> Connexion</Text>
               </TouchableOpacity>
             </View>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView, View } from 'react-native';
-import { styles as genStyles } from '../../styles/styles';
+import { styles as genStyles } from '../../styles/login';
 import { styles } from '../../styles/testMap';
 import GetLocation from 'react-native-get-location';
 import { getDistance } from 'geolib';

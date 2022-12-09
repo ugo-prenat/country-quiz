@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { styles } from '../styles/styles';
+import { styles } from '../styles/login';
 
 const CountryCard = ({ country, navigation }) => {
   return (
