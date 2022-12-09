@@ -17,7 +17,7 @@ const StackNavigator = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="register"
+      initialRouteName="home"
     >
       <Stack.Screen name="home" component={TabNavigator} />
       <Stack.Screen name="register" component={Register} />

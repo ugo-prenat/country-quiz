@@ -1,7 +1,5 @@
 import React, { useCallback, useState } from "react";
 import {
-  Pressable,
-  SafeAreaView,
   Text,
   ImageBackground,
   View,
@@ -11,7 +9,7 @@ import {
   Alert,
   ScrollView,
 } from "react-native";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles/login";
 
 const Register = ({ navigation }) => {
   const [email, setEmail] = useState("");

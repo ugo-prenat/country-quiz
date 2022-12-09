@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 
-import { Text, ImageBackground, View, Image, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { styles } from '../../styles/styles';
+import { Text, ImageBackground, View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { styles } from '../../styles/login';
 
 
 const Login = ({ navigation }) => {

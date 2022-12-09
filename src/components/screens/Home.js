@@ -8,7 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles/home";
 
 const Home = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
