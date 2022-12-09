@@ -5,7 +5,8 @@ const blue = '#006CEA';
 export const styles = StyleSheet.create({
   pageContainer: {
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'white'
   },
   quizQuestionContainer: {
     justifyContent: 'flex-start'
@@ -16,16 +17,20 @@ export const styles = StyleSheet.create({
   button: {
     color: 'white',
     backgroundColor: blue,
-    padding: 10,
-    borderRadius: 5
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    fontSize: 25
   },
   questionNb: {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'MuktaMahee-Regular'
   },
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 15
+    fontSize: 17,
+    fontFamily: 'MuktaMahee-SemiBold'
   },
   questionContainer: {
     display: 'flex',
@@ -39,14 +44,16 @@ export const styles = StyleSheet.create({
   },
   question: {
     fontSize: 20,
-    marginBottom: 20
+    marginBottom: 20,
+    fontFamily: 'MuktaMahee-SemiBold'
   },
   propositionBtn: {
     marginVertical: 10,
     alignSelf: 'center'
   },
   propositionBtnText: {
-    color: 'white'
+    color: 'white',
+    fontFamily: 'MuktaMahee-SemiBold'
   },
   correctAnswer: {
     backgroundColor: 'green'
@@ -70,11 +77,16 @@ export const styles = StyleSheet.create({
   },
   didYouKnow: {
     fontWeight: 'bold',
-    marginBottom: 5
+    marginBottom: 5,
+    fontFamily: 'MuktaMahee-Regular',
+    fontSize: 15
   },
   didYouKnowAnecdote: {
     textAlign: 'center',
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: 'MuktaMahee-Regular',
+    fontSize: 15,
+    lineHeight: 20
   },
   resultBtns: {
     flexDirection: 'row',
@@ -89,5 +101,10 @@ export const styles = StyleSheet.create({
   replayBtnText: {
     color: blue,
     fontWeight: 'normal'
+  },
+  quizResultText: {
+    fontFamily: 'MuktaMahee-SemiBold',
+    fontSize: 17,
+    lineHeight: 22
   }
 });

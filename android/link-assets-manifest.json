@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-Bold.ttf",
+      "sha1": "865833e6c97ac5d955a19cba68827a2988bbb09c"
+    },
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-ExtraBold.ttf",
+      "sha1": "29aaca5275d10595fb8cb4ccca1c36eb12217c40"
+    },
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-ExtraLight.ttf",
+      "sha1": "9a74f85c551ae6b83bb79fc5a3be57cadadb9ec3"
+    },
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-Light.ttf",
+      "sha1": "8a21db769bd719406d36406d054d1bd45c71ee56"
+    },
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-Medium.ttf",
+      "sha1": "2328031b866735b71ab086216c64c22942d86e47"
+    },
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-Regular.ttf",
+      "sha1": "ab9b2856679d15a1f767a275eaaaaf7aea6776ba"
+    },
+    {
+      "path": "src/components/assets/fonts/MuktaMahee-SemiBold.ttf",
+      "sha1": "1395c9144c4cf470c64d3132fff3cda43f4fb1b0"
+    }
+  ]
+}
