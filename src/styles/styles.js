@@ -55,6 +55,9 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
     color: "#000",
   },
+  pwdInput: {
+    width: 250,
+  },
 
   errorInput: {
     borderColor: "#EE0000",
