@@ -31,30 +31,30 @@ const Home = ({ navigation }) => {
  
           <Text style={styles.home_label}>Découvrez les pays du monde sur Country Quiz !</Text>
 
-          <TouchableOpacity style={styles.countryAllButton} onPress={() => navigation.push('countryList', {region: 'all'})}>
+          <TouchableOpacity style={styles.countryAllButton} onPress={() => navigation.push('countryList', {region: 'all', name: 'Tous les Pays'})}>
             <Text style={styles.textAllCountry}>Tous les pays</Text>
           </TouchableOpacity>
 
         
             <View style={styles.countryBox}>
-              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList',{ region: 'europe'})}>
+              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList',{ region: 'europe', name: 'Europe'})}>
                 <Image style={styles.imageCountry} source={require('../../assets/europe.png')}  resizeMode='contain'></Image>
                 <Text style={styles.textCountry}>Europe</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList',{ region: 'america'})}>
+              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList',{ region: 'america', name: 'Amériques'})}>
                 <Image style={styles.imageCountry} source={require('../../assets/america.png')} resizeMode='contain'></Image>
                 <Text style={styles.textCountry}>Amériques</Text>
               </TouchableOpacity>
             </View>
 
             <View style={styles.countryBox}>
-              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList', {region: 'africa'})}>
+              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList', {region: 'africa', name: 'Afrique'})}>
                 <Image style={styles.imageCountry} source={require('../../assets/africa.png')}  resizeMode='contain'></Image>
                 <Text style={styles.textCountry}>Afrique</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList', {region: 'asia'})}>
+              <TouchableOpacity style={styles.countryButton} onPress={() => navigation.push('countryList', {region: 'asia', name: 'Asie'})}>
                 <Image style={styles.imageCountry} source={require('../../assets/asia.png')}  resizeMode='contain'></Image>
                 <Text style={styles.textCountry}>Asie & Océanie</Text>
               </TouchableOpacity>

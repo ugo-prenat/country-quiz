@@ -15,7 +15,7 @@ import CountryCard from '../CountryCard';
 import { Icon } from '@rneui/themed';
 
 const CountryList = ({ navigation, route }) => {
-  const { region } = route.params;
+  const { region, name } = route.params;
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
@@ -50,33 +50,48 @@ const CountryList = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <ImageBackground  
+          source={require('../../assets/bg_gradient.png')}
+          resizeMode="cover"
+          style={styles.background_image}>
+
+        <View style={styles.container}>
         
-      <View>
-        
-        <Text>{region === 'all' ? 'Tous les pays' : region}</Text>
+        <View style={styles.header_bar}>
+
+            <TouchableOpacity onPress={() => navigation.push('home')}>
+              <Image
+                source={require('../../assets/logo_header.png')}
+                style={styles.logo_appBar}>
+              </Image>
+            </TouchableOpacity>
+        </View>
+
+        <Text style={styles.labelCountry}>{name}</Text>
 
         <TextInput
           defaultValue={search}
           onChangeText={setSearch}
+          style={styles.searchbar}
           placeholder={'Rechercher un pays'}
-        />
+          placeholderTextColor={'#fff'}/>
 
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : filteredCountries.length === 0 ? (
-          <Text>Aucun pays trouvé</Text>
-        ) : (
-          <FlatList
-            style={{ padding: 24 }}
-            data={filteredCountries}
-            keyExtractor={({ altSpellings }) => altSpellings}
-            renderItem={({ item }) => (
-              <CountryCard country={item} navigation={navigation}/>
-            )}
-            />
-            )}
-            </View>
-        
+          {isLoading ? (
+            <ActivityIndicator />
+          ) : filteredCountries.length === 0 ? (
+            <Text style={styles.countryNotFound}>Aucun pays trouvé</Text>
+          ) : (
+            <FlatList
+              style={{ padding: 24 }}
+              data={filteredCountries}
+              keyExtractor={({ altSpellings }) => altSpellings}
+              renderItem={({ item }) => (
+                <CountryCard country={item} navigation={navigation}/>
+              )}
+              />
+              )}
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };

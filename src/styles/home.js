@@ -82,6 +82,31 @@ export const styles = StyleSheet.create({
         fontSize : 20,
         color : '#fff',
         fontFamily : 'MuktaMahee-Regular',
-    },  
+    },
+    
+    labelCountry : {
+        fontSize : 30,
+        color : '#fff',
+        fontFamily : 'MuktaMahee-Regular',
+    },
+    
+    searchbar : {
+        borderColor : '#fff',
+        borderWidth : 2,
+        borderRadius : 5,
+        width : 300,
+        marginTop : 10,
+        paddingLeft : 10,
+        color : '#fff',
+        fontSize : 15,
+        fontFamily : 'MuktaMahee-Regular',
+    },
+
+    countryNotFound : {
+        fontSize : 25,
+        color : '#fff',
+        fontFamily : 'MuktaMahee-Regular',
+        marginTop : 10
+    },
     
 });
