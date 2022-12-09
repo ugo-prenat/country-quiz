@@ -6,7 +6,8 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 import { styles } from '../../styles/home';
 
@@ -34,20 +35,36 @@ const CountryList = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View>
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : (
-          <FlatList
-            style={{ padding: 24 }}
-            data={data}
-            keyExtractor={({ altSpellings }) => altSpellings}
-            renderItem={({ item }) => (
-              <CountryCard country={item} navigation={navigation} />
+        <ImageBackground 
+            source={require('../../assets/bg_gradient.png')}
+            resizeMode="cover"
+            style={styles.background_image}>
+
+            <View style={styles.container}>
+
+                <View style={styles.header_bar}>
+                    <TouchableOpacity onPress={() => navigation.push('home')}>
+                        <Image
+                            source={require('../../assets/logo_header.png')}
+                            style={styles.logo_appBar}>
+                        </Image>
+                    </TouchableOpacity>
+                </View>
+
+                {isLoading ? (
+                <ActivityIndicator />
+                ) : (
+                <FlatList
+                    style={{ padding: 24 }}
+                    data={data}
+                    keyExtractor={({ altSpellings }) => altSpellings}
+                    renderItem={({ item }) => (
+                    <CountryCard country={item} navigation={navigation} />
+                    )}
+                />
             )}
-          />
-        )}
-      </View>
+            </View>
+        </ImageBackground>
     </SafeAreaView>
   );
 };

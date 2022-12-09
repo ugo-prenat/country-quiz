@@ -109,7 +109,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 40,
     borderBottomWidth: 2,
-    borderColor: '#D9D9D9'
+    borderColor: '#A2A2A2'
   },
   textCardAllCountry: {
     display: 'row',
@@ -121,7 +121,10 @@ export const styles = StyleSheet.create({
   },
   textAllCountryFlags: {
     paddingVertical: 20,
-    fontWeights: '900'
+    fontWeights: '900',
+    color : '#fff',
+    fontFamily : 'MuktaMahee-Regular',
+    fontSize : 20
   },
   emptyFavourites: {
     alignSelf: 'center',
